@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package skynet;
+
+message DoubleMatrix{
+    uint32 rows = 1;
+    uint32 columns = 2  ;
+    double data = 3;
+}
+
+message FloatMatrix{
+    uint32 rows = 1;
+    uint32 columns = 2  ;
+    repeated float data = 3;
+}
+
+message SparseFloatMatrix{
+    uint32 rows = 1;
+    uint32 columns = 2  ;
+    repeated float data = 3;
+}
+
+message SparseDoubleMatrix{
+    uint32 rows = 1;
+    uint32 columns = 2  ;
+    message DoubleMatrixEntry{
+        uint32 row = 1;
+        uint32 column = 2;
+        double data = 3;
+    }
+    repeated DoubleMatrixEntry data = 3;
+}
