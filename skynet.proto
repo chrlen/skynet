@@ -17,7 +17,12 @@ message FloatMatrix{
 message SparseFloatMatrix{
     uint32 rows = 1;
     uint32 columns = 2  ;
-    repeated float data = 3;
+    message FloatMatrixEntry{
+        uint32 row = 1;
+        uint32 column = 2;
+        double data = 3;
+    }
+    repeated FloatMatrixEntry data = 3;
 }
 
 message SparseDoubleMatrix{
